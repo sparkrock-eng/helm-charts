@@ -71,7 +71,7 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-healthCheck:
+healthChecks:
   enabled: false
 livenessProbe: {}
 #  httpGet:
