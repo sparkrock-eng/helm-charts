@@ -3,6 +3,16 @@ entries:
   app:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-11-25T23:46:13.314982849Z"
+    description: A Helm chart for Kubernetes
+    digest: af5573928e7004aa84c5793f92d1f75986af8afe200eeab3627294efd8ded3c7
+    name: app
+    type: application
+    urls:
+    - https://github.com/sparkrock-eng/helm-charts/releases/download/app-1.0.1/app-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-11-25T23:42:40.595687766Z"
     description: A Helm chart for Kubernetes
     digest: 5f773d6984c45713f39f55d71cea805d1e6423b8b2d3a88a2180f15a55d3cc09
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/sparkrock-eng/helm-charts/releases/download/app-0.1.0/app-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-25T23:42:40.595700259Z"
+generated: "2024-11-25T23:46:13.314994971Z"
