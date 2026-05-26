@@ -1,0 +1,16 @@
+name: SCA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sca:
+    uses: sparkrock-eng/shared-workflows/.github/workflows/security-sca.yml@main
