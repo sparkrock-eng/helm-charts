@@ -1,0 +1,32 @@
+# Org security scanning - calls sparkrock-eng/shared-workflows reusable workflows.
+# Each tool runs as an independent job; irrelevant tools self-skip.
+# Weekly schedule is jittered per repo to avoid a synchronized org-wide CI spike.
+name: Security
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+  schedule:
+    - cron: '7 7 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sca:
+    uses: sparkrock-eng/shared-workflows/.github/workflows/security-sca.yml@main
+  sast:
+    uses: sparkrock-eng/shared-workflows/.github/workflows/security-sast.yml@main
+  secrets:
+    uses: sparkrock-eng/shared-workflows/.github/workflows/security-trufflehog.yml@main
+    with:
+      scan_filesystem_only: true
+  bearer:
+    uses: sparkrock-eng/shared-workflows/.github/workflows/security-bearer.yml@main
+  checkov:
+    uses: sparkrock-eng/shared-workflows/.github/workflows/security-checkov.yml@main
+  trivy:
+    uses: sparkrock-eng/shared-workflows/.github/workflows/security-trivy.yml@main
+  precommit:
+    uses: sparkrock-eng/shared-workflows/.github/workflows/security-precommit.yml@main
